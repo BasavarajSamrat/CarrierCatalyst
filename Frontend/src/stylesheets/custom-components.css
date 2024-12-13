@@ -1,0 +1,163 @@
+.card {
+  box-shadow: 0 0 1px gray;
+}
+
+.card-lg {
+  box-shadow: 0 0 2px rgb(128, 128, 128);
+}
+
+.divider {
+  border-bottom: 1px solid rgb(182, 182, 182);
+  margin: 10px 0;
+}
+
+.loader-parent {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.638);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  height: 80px;
+  width: 80px;
+  border: 5px solid #f3f3f3;
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: loader 1s linear infinite;
+}
+
+.option {
+  box-shadow: rgba(75, 187, 77, 0.638) 0px 0px 1.5px;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.selected-option {
+  box-shadow: rgba(0, 0, 0, 0.638) 0px 0px 1px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: green;
+  
+}
+
+.result {
+  box-shadow: rgba(75, 75, 75, 0.638) 0px 0px 2px;
+  padding: 30px;
+  color: white !important;
+  border-radius: 5px;
+}
+
+.lottie-animation {
+  height: 300px;
+}
+
+.timer {
+  background-color: #000000;
+  color: white !important;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cat-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cat-item{
+  background-color: var(--first);
+  width: 500px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  border: 1px solid white ;
+  border-radius: 10px;
+}
+
+
+
+.img-div{
+  width: 50%; 
+  position: relative;
+  overflow: hidden; 
+}
+
+.img-div img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; 
+  padding: 20px;
+}
+
+.img-div-logo img {
+  width: 30%;
+  height: auto;
+  object-fit: cover; 
+
+  
+}
+
+.visible{
+  color: white;
+  background-color: black;
+}
+
+.add-edit-exam .ant-form-item-label > label {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.result {
+  text-align: center !important;
+  margin-top: 20px !important;
+  color: white !important;
+}
+
+.result h1,
+.result h2 {
+  color: white !important; /* Force result text to white */
+}
+
+/* Style for form labels */
+.ant-form-item-label > label {
+  color: white !important; /* Make label text white */
+}
+
+/* Style for form inputs */
+.input-field {
+  background-color: rgb(0, 0, 0); /* Set background color to white */
+  color: rgb(255, 255, 255); /* Set input text color to black for better readability */
+  border: 1px solid #ccc; /* Optional: add a border to the input fields */
+  padding: 8px; /* Optional: add padding to inputs */
+  border-radius: 4px; /* Optional: make the borders rounded */
+}
+
+
+.content{
+  border: 1px solid white;
+  margin: 20px;
+  padding: 30px;
+}

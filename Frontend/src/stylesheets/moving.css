@@ -1,0 +1,23 @@
+.moving-tag {
+    width: 100%; /* Fit the content */
+    padding: 10px;
+    position: relative; /* Necessary for animation movement */
+    white-space: nowrap;
+    font-size: 40px;
+    letter-spacing: 3px; /* Prevent wrapping */
+    animation: moveRightToLeft 15s linear infinite; /* 5 seconds, linear, infinite */
+  }
+  
+  /* Keyframes for moving right to left */
+  @keyframes moveRightToLeft {
+    0% {
+      transform: translateX(100%); /* Start outside the right edge */
+    }
+    50% {
+      transform: translateX(0%); /* Enter the screen fully */
+    }
+    100% {
+      transform: translateX(-100%); /* Exit completely from the left edge */
+    }
+  }
+  

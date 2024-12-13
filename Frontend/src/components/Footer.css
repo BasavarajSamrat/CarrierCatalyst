@@ -1,0 +1,36 @@
+/* Ensure the full height of the page */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+/* Container for the entire page content */
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Ensure content takes all available space */
+.main-content {
+  flex: 1;
+}
+
+/* Footer styling */
+footer {
+  background: linear-gradient(40deg, rgb(104, 105, 109), rgb(132, 96, 142));
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  margin-top: auto;  /* Pushes footer to the bottom */
+  padding: 10px;
+}
+
+/* Footer text styling */
+footer p {
+  margin-top: 10px;
+}
