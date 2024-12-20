@@ -42,7 +42,7 @@ function Categories() {
     <div className='bg-first'>
       <Navbar/>
     <div className='cat-outer bg-first'>
-    <p className='text-center bg-first  hpx-100 text-2xl text-center justify-center p-2 text-white '>Categories</p>
+    <p className='text-center bg-first  hpx-100 text-2xl text-center justify-center p-2 text-white mft-20'>Quantitative Aptitude</p>
 
  <div className="cat-menu mft-20">
  {categories.map((category) => {

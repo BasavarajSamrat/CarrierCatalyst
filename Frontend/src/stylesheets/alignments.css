@@ -22,8 +22,15 @@
 .hpx-500{
     height: 500px;
 }
+.hpx-400{
+    height: 400px;
+}
 .hpx-700{
     height: 700px;
+}
+
+.wpx-120 {
+    width: 120px;
 }
 
 .w-screen{
@@ -44,6 +51,9 @@
 
 .w-400{
     width: 400px;
+}
+.w-500 {
+    width: 500px;
 }
 
 .flex{
@@ -163,7 +173,7 @@
 }
 
 .mfb-100{
-    margin-top:100px;
+    margin-buttom:100px;
 }
 
 

@@ -161,3 +161,36 @@
   margin: 20px;
   padding: 30px;
 }
+
+
+/* For Table Header */
+.ant-table-thead>tr>th {
+  background-color: black !important;
+  color: purple !important;
+  font-size: 20px;
+ 
+}
+
+/* For Table Body Cells */
+.ant-table-tbody>tr>td {
+  background-color: black !important;
+  color: white !important;
+  font-size: 15px;
+}
+
+/* For Table Hover Effect (Optional) */
+.ant-table-tbody>tr:hover>td {
+  background-color: #333 !important;
+  /* Darker shade on hover */
+}
+
+/* For Borders (Optional, if needed to match the theme) */
+.ant-table-tbody>tr>td,
+.ant-table-thead>tr>th {
+  border-color: white !important;
+  /* Adjust border color to match the design */
+}
+
+bg-mix{
+background: linear-gradient(120deg, purple, black);
+}

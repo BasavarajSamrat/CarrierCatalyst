@@ -1,4 +1,4 @@
-import { Form, message, Modal } from "antd";
+import { Descriptions, Form, message, Modal } from "antd";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addQuestionToExam, editQuestionById } from "../../../apicalls/exams";
@@ -19,6 +19,7 @@ function AddEditQuestion({
       const requiredPayload = {
         name: values.name,
         correctOption: values.correctOption,
+        description:values.description,
         options: {
           A: values.A,
           B: values.B,

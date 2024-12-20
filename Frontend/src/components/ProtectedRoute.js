@@ -14,12 +14,12 @@ function ProtectedRoute({ children }) {
   const navigate = useNavigate();
 
   const userMenu = [
-    {
-      title: "Home",
-      paths: ["/", "/user/write-exam"],
-      icon: <i className="ri-home-line"></i>,
-      onClick: () => navigate("/"),
-    },
+    // {
+    //   title: "Home",
+    //   paths: ["/", "/user/write-exam"],
+    //   icon: <i className="ri-home-line"></i>,
+    //   onClick: () => navigate("/"),
+    // },
     {
       title: "Quize",
       paths: ["/home", "/user/write-exam"],

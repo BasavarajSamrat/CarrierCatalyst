@@ -36,14 +36,15 @@ const questionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    options: {
-      type: Object,
-      required: true,
-    },
     description: {
       type: String, // Field to store the explanation for the correct answer
       required: true, // Set to true if you want all questions to have a description
     },
+    options: {
+      type: Object,
+      required: true,
+    },
+
     exam: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "exams",

@@ -1,5 +1,6 @@
 
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
 
 // Note Schema
 // const noteSchema = new mongoose.Schema({
