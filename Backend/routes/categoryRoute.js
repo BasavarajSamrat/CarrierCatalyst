@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const Category = require('../models/Categorymodel');
+const Category = require('../models/Categorymodel.js');
 const router = express.Router();
 
 

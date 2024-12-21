@@ -1,7 +1,7 @@
 const authMiddleware = require("../middlewares/authMiddleware");
-const Exam = require("../models/examModel");
-const User = require("../models/userModel");
-const Report = require("../models/reportModel");
+const Exam = require("../models/examModel.js");
+const User = require("../models/userModel.js");
+const Report = require("../models/reportModel.js");
 const router = require("express").Router();
 
 

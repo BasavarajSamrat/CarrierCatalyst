@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const Exam = require("../models/examModel");
+const Exam = require("../models/examModel.js");
 const authMiddleware = require("../middlewares/authMiddleware");
-const Question = require("../models/questionModel");
+const Question = require("../models/questionModel.js");
 
 
 
