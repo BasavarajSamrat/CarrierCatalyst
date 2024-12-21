@@ -12,7 +12,9 @@ function Topic() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/categories/${categoryId}/topics/${topicName}/notes`)
+    fetch(
+      `https://carriercatalyst-7.onrender.com/api/categories/${categoryId}/topics/${topicName}/notes`
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Failed to fetch notes for topic: ${topicName}`);

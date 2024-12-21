@@ -13,10 +13,10 @@ function Categories() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/categories') // Update with your API endpoint
+    fetch("https://carriercatalyst-7.onrender.com/api/categories") // Update with your API endpoint
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to fetch categories');
+          throw new Error("Failed to fetch categories");
         }
         return response.json();
       })

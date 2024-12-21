@@ -13,20 +13,22 @@ function Note() {
 
   useEffect(() => {
     console.log(`Fetching note with categoryId=${categoryId}, topicName=${topicName}, noteName=${noteName}`);
-    fetch(`http://localhost:5000/api/categories/${categoryId}/topics/${topicName}/notes/${noteName}`)
+    fetch(
+      `https://carriercatalyst-7.onrender.com/api/categories/${categoryId}/topics/${topicName}/notes/${noteName}`
+    )
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to fetch note');
+          throw new Error("Failed to fetch note");
         }
         return response.json();
       })
       .then((data) => {
-        console.log('Fetched note data:', data); // Debugging
+        console.log("Fetched note data:", data); // Debugging
         setNote(data[0]); // Access the first element of the array
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Error fetching note:', err); // Debugging
+        console.error("Error fetching note:", err); // Debugging
         setError(err.message);
         setLoading(false);
       });
