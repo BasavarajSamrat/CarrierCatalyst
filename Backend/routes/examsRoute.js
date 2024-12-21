@@ -3,7 +3,7 @@ const Exam = require("../models/examModel");
 const authMiddleware = require("../middlewares/authMiddleware");
 const Question = require("../models/questionModel");
 
-// add exam
+
 
 router.post("/add", authMiddleware, async (req, res) => {
   try {
@@ -30,7 +30,7 @@ router.post("/add", authMiddleware, async (req, res) => {
   }
 });
 
-// get all exams
+
 router.post("/get-all-exams", authMiddleware, async (req, res) => {
   try {
     const exams = await Exam.find({});
@@ -48,7 +48,7 @@ router.post("/get-all-exams", authMiddleware, async (req, res) => {
   }
 });
 
-// get exam by id
+
 router.post("/get-exam-by-id", authMiddleware, async (req, res) => {
   try {
     const exam = await Exam.findById(req.body.examId).populate("questions");
@@ -66,7 +66,7 @@ router.post("/get-exam-by-id", authMiddleware, async (req, res) => {
   }
 });
 
-// edit exam by id
+
 router.post("/edit-exam-by-id", authMiddleware, async (req, res) => {
   try {
     await Exam.findByIdAndUpdate(req.body.examId, req.body);
@@ -83,7 +83,7 @@ router.post("/edit-exam-by-id", authMiddleware, async (req, res) => {
   }
 });
 
-// delete exam by id
+
 router.post("/delete-exam-by-id", authMiddleware, async (req, res) => {
   try {
     await Exam.findByIdAndDelete(req.body.examId);
@@ -100,15 +100,15 @@ router.post("/delete-exam-by-id", authMiddleware, async (req, res) => {
   }
 });
 
-// add question to exam
+
 
 router.post("/add-question-to-exam", authMiddleware, async (req, res) => {
   try {
-    // add question to Questions collection
+  
     const newQuestion = new Question(req.body);
     const question = await newQuestion.save();
 
-    // add question to exam
+   
     const exam = await Exam.findById(req.body.exam);
     exam.questions.push(question._id);
     await exam.save();
@@ -125,10 +125,10 @@ router.post("/add-question-to-exam", authMiddleware, async (req, res) => {
   }
 });
 
-// edit question in exam
+
 router.post("/edit-question-in-exam", authMiddleware, async (req, res) => {
   try {
-    // edit question in Questions collection
+    
     await Question.findByIdAndUpdate(req.body.questionId, req.body);
     res.send({
       message: "Question edited successfully",
@@ -144,13 +144,13 @@ router.post("/edit-question-in-exam", authMiddleware, async (req, res) => {
 });
 
 
-// delete question in exam
+
 router.post("/delete-question-in-exam", authMiddleware, async (req, res) => {
      try {
-        // delete question in Questions collection
+        
         await Question.findByIdAndDelete(req.body.questionId);
 
-        // delete question in exam
+     
         const exam = await Exam.findById(req.body.examId);
         exam.questions = exam.questions.filter(
           (question) => question._id != req.body.questionId

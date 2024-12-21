@@ -4,7 +4,7 @@ const User = require("../models/userModel");
 const Report = require("../models/reportModel");
 const router = require("express").Router();
 
-// add report
+
 
 router.post("/add-report", authMiddleware, async (req, res) => {
   try {
@@ -23,7 +23,7 @@ router.post("/add-report", authMiddleware, async (req, res) => {
   }
 });
 
-// get all reports
+
 
 router.post("/get-all-reports", authMiddleware, async (req, res) => {
   try {
@@ -70,7 +70,7 @@ router.post("/get-all-reports", authMiddleware, async (req, res) => {
   }
 });
 
-// get all reports by user
+
 router.post("/get-all-reports-by-user", authMiddleware, async (req, res) => {
   try {
     const reports = await Report.find({ user: req.body.userId })

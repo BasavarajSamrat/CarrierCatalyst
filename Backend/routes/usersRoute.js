@@ -4,11 +4,11 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-// user registration
+
 
 router.post("/register", async (req, res) => {
   try {
-    // check if user already exists
+    
     const userExists = await User.findOne({ email: req.body.email });
     if (userExists) {
       return res
@@ -16,12 +16,12 @@ router.post("/register", async (req, res) => {
         .send({ message: "User already exists", success: false });
     }
 
-    // hash password
+    
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     req.body.password = hashedPassword;
 
-    // create new user
+   
     const newUser = new User(req.body);
     await newUser.save();
     res.send({
@@ -37,11 +37,11 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// user login
+
 
 router.post("/login", async (req, res) => {
   try {
-    // check if user exists
+   
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
       return res
@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
         .send({ message: "User does not exist", success: false });
     }
 
-    // check password
+   
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
@@ -78,7 +78,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// get user info
+
 
 router.post("/get-user-info", authMiddleware, async (req, res) => {
   try {
