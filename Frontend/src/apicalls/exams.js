@@ -11,7 +11,7 @@ export const addExam = async (payload) => {
   }
 };
 
-// get all exams
+
 export const getAllExams = async () => {
   try {
     const response = await axiosInstance.post("/api/exams/get-all-exams");

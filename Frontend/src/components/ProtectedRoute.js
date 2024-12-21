@@ -14,17 +14,17 @@ function ProtectedRoute({ children }) {
   const navigate = useNavigate();
 
   const userMenu = [
-    // {
-    //   title: "Home",
-    //   paths: ["/", "/user/write-exam"],
-    //   icon: <i className="ri-home-line"></i>,
-    //   onClick: () => navigate("/"),
-    // },
     {
-      title: "Quize",
-      paths: ["/home", "/user/write-exam"],
+      title: "Home",
+      paths: ["/home/user/write-exam"],
       icon: <i className="ri-home-line"></i>,
       onClick: () => navigate("/home"),
+    },
+    {
+      title: "Quize",
+      paths: ["/test", "/user/write-exam"],
+      icon: <i className="ri-questionnaire-line"></i>,
+      onClick: () => navigate("/test"),
     },
     {
       title: "Reference",
@@ -38,7 +38,7 @@ function ProtectedRoute({ children }) {
       icon: <i className="ri-bar-chart-line"></i>,
       onClick: () => navigate("/user/reports"),
     },
-   
+
     {
       title: "Logout",
       paths: ["/logout"],
@@ -53,15 +53,15 @@ function ProtectedRoute({ children }) {
   const adminMenu = [
     {
       title: "Home",
-      paths: ["/", "/user/write-exam"],
+      paths: ["/home/user/write-exam"],
       icon: <i className="ri-home-line"></i>,
-      onClick: () => navigate("/"),
+      onClick: () => navigate("/home"),
     },
     {
       title: "Quize",
-      paths: ["/home", "/user/write-exam"],
-      icon: <i className="ri-home-line"></i>,
-      onClick: () => navigate("/home"),
+      paths: ["/test", "/user/write-exam"],
+      icon:  <i className="ri-questionnaire-line"></i>,
+      onClick: () => navigate("/test"),
     },
     {
       title: "Exams",
@@ -75,12 +75,7 @@ function ProtectedRoute({ children }) {
       icon: <i className="ri-bar-chart-line"></i>,
       onClick: () => navigate("/admin/reports"),
     },
-    // {
-    //   title: "Profile",
-    //   paths: ["/profile"],
-    //   icon: <i className="ri-user-line"></i>,
-    //   onClick: () => navigate("/profile"),
-    // },
+   
     {
       title: "Logout",
       paths: ["/logout"],
@@ -96,6 +91,7 @@ function ProtectedRoute({ children }) {
     try {
       dispatch(ShowLoading());
       const response = await getUserInfo();
+      console.log(response)
       dispatch(HideLoading());
       if (response.success) {
         dispatch(SetUser(response.data));

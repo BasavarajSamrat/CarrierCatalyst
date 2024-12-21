@@ -42,6 +42,16 @@ function WriteExam() {
     }
   };
 
+ 
+
+// Format time as MM:SS
+const formatTime = (seconds) => {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+};
+
+
   // Calculate the exam result
   const calculateResult = async () => {
     try {
@@ -140,8 +150,9 @@ function WriteExam() {
                 {questions[selectedQuestionIndex].name}
               </h1>
               <div className="timer">
-                <span className="text-2xl">{secondsLeft}s</span>
+                <span className="text-xl">Time Left :- {formatTime(secondsLeft)}</span>
               </div>
+
             </div>
 
             <div className="flex flex-col gap-2 text-white">
@@ -282,7 +293,7 @@ function WriteExam() {
             <div className="flex justify-center gap-2">
               <button
                 className="primary-outlined-btn mt-2 "
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/home")}
               >
                 Close
               </button>

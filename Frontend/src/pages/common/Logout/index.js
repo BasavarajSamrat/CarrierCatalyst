@@ -1,65 +1,52 @@
+import React from 'react'
+import Navbar from '../../../components/Navbar'
+import Footer from '../../../components/Footer';
+import { Link } from 'react-router-dom';
 
-
-import React, { useEffect, useState } from "react";
-import Navbar from "../../../components/Navbar";
-import Footer from "../../../components/Footer";
-
-import { getUserInfo } from "../../../apicalls/users";
-
-function First() {
-  const [name, setName] = useState(null);
-  
-  const getUserData = async () => {
-    try {
-      
-      const response = await getUserInfo();
-      console.log(response);
-     
-      if (response.success) {
-        const capitalized = response.data.name
-          .split(" ")
-          .map(
-            (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-          )
-          .join(" "); 
-        setName(capitalized);
-      } else {
-        console.error(response.message);
-      }
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      getUserData();
-    } 
-  }, []);
-
-
+function index() {
   return (
-    <div className="bg-first">
+    <div>
       <Navbar />
-     
-        <div className="mft-20 p-2">
-          <span className="text-purple text-2xl p-1 mt-2">
-            Welcome <span className="text-purple text-2xl p-1">{name},</span>
-          </span>
+      <div className="div parent text-white bg-first p- text-mdx">
+        <div className="p-5 text-md text-center">
+          <p className="text-white text-xl moving-tag">
+            Welcome to CarrierCatalyst
+          </p>
+          <p>
+            Practice aptitude tests and prepare for your interviews with our
+            platform.
+          </p>
+        </div>
 
-          <div className="p-4">
-            <p className="text-xl text-white">
-              What is an aptitude test in recruitment?
-            </p>
-            <p className="text-white text-lg">
-              An aptitude test is an assessment designed to evaluate a person's
-              potential to excel in a specific task by assessing their natural
-              abilities and skills rather than their acquired knowledge.
-            </p>
+        <div className="text-white bg-mix">
+          <div className="flex bd justify-between hpx-700 mt-10 tf">
+            <div className="w-50 text-md p-5 mft-80">
+              <p className="text-xl">
+                What is an aptitude test in recruitment?
+              </p>
+              <p>
+                An aptitude test is an assessment designed to evaluate a
+                person's potential to excel in a specific task by assessing
+                their natural abilities and skills rather than their acquired
+                knowledge.
+              </p>
+              <p>
+                Online aptitude tests are mainly used by organizations in their
+                hiring process and are also helpful for L&D programs.
+              </p>
+              <div className="w-25% mft-80 p-2">
+                <Link className="bd p-2 text-lg text" to="/login">
+                  Get started
+                </Link>
+              </div>
+            </div>
+            <div className="img-div mt-50">
+              <img src="/assets/boy.png" alt="student img" />
+            </div>
           </div>
         </div>
-    
-      <h2 className="text-center mt-3 text-2xl p-2 text-purple">
+      </div>
+      <h2 className="text-center mt-3 text-2xl p-5 text-purple">
         Types Of Aptitude Interview Questions
       </h2>
       <div className="mft-50 mt-3 text-white text-md flex gap-100 tf">
@@ -127,4 +114,4 @@ function First() {
   );
 }
 
-export default First;
+export default index;

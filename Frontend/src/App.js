@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import Login from "./pages/common/Login";
 import Register from "./pages/common/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Home from "./pages/common/Home";
+import Test from "./pages/common/Test";
+import Logout from "./pages/common/Logout";
 import About from "./pages/common/About"
 import Content from "./pages/common/Content";
 import First from "./pages/common/First";
@@ -32,22 +33,28 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<First />} />
+          <Route path="/home" element={<First />} />
           <Route path="/about" element={<About />} />
-          
+          <Route path="/" element={<Logout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/content" element={<Content />} />
           <Route path="/categories" element={<Content />} />
-          <Route path="/categories/:categoryId/topics/:topicName" element={<Topic />} />
-          <Route path="/categories/:categoryId/topics/:topicName/notes/:noteName" element={<Note />} />
+          <Route
+            path="/categories/:categoryId/topics/:topicName"
+            element={<Topic />}
+          />
+          <Route
+            path="/categories/:categoryId/topics/:topicName/notes/:noteName"
+            element={<Note />}
+          />
 
           {/* Protected User Routes */}
           <Route
-            path="/home"
+            path="/test"
             element={
               <ProtectedRoute>
-                <Home />
+                <Test/>
               </ProtectedRoute>
             }
           />

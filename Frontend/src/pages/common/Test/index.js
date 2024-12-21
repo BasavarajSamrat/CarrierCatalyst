@@ -1,12 +1,14 @@
 import { Col, message, Row } from "antd";
-import React, { useEffect } from "react";
+import React, { useEffect ,useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllExams } from "../../../apicalls/exams";
 import { HideLoading, ShowLoading } from "../../../redux/loaderSlice";
 import PageTitle from "../../../components/PageTitle";
 import { useNavigate } from "react-router-dom";
-function Home() {
-  const [exams, setExams] = React.useState([]);
+
+
+function Test() {
+  const [exams, setExams] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.users);
@@ -63,4 +65,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Test;
