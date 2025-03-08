@@ -1,6 +1,6 @@
 **CarrierCatalyst**
 
-CarrierCatalyst is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application designed for preparation for job interview aptitude questions and provides time constraint quiz.<br>
+CarrierCatalyst is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application designed for preparation for job interview aptitude questions and provides time constraint quiz.<br>   
 
 **Features**
 
