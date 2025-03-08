@@ -15,25 +15,10 @@ Database management using MongoDB
 State management with React Context/Redux
 
 Project Structure
+![image](https://github.com/user-attachments/assets/4e1c2e2e-0075-40f8-bac6-faacc4c539c2)
 
-CarrierCatalyst/
-├── Backend/            # Node.js backend with Express.js
-│   ├── config/         # Configuration files
-│   ├── middlewares/    # Custom middleware functions
-│   ├── models/         # Database models (MongoDB schemas)
-│   ├── routes/         # API endpoints
-│   ├── server.js       # Main entry point for the backend
-│   ├── package.json    # Backend dependencies
-│   ├── .env            # Environment variables
-│
-├── Frontend/           # React frontend
-│   ├── src/            # Main React components and pages
-│   ├── public/         # Static assets
-│   ├── package.json    # Frontend dependencies
-│
-├── CarrierCatalystProject/  # [Describe if this has specific purpose]
-│
-├── .git/               # Git repository folder
+
+
 
 Installation
 
